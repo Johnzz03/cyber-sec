@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+            color: #333;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            background-color: #333;
+            color: white;
+        }
+
+        header .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        header .logo img {
+            height: 50px;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center; /* Center the buttons */
+            gap: 15px; /* Space between buttons */
+            background-color: #333;
+            padding: 10px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: white;
+            padding: 10px 15px;
+            border-radius: 5px;
+            background-color: #09e74c;
+            box-shadow: 0 4px #07c43f; /* 3D shadow effect */
+            transition: all 0.2s ease-in-out;
+        }
+
+        nav a:hover {
+            background-color: #07c43f;
+            box-shadow: 0 2px #05a832; /* Reduced shadow on hover */
+            transform: translateY(2px); /* Slight downward movement */
+        }
+
+        nav a:active {
+            background-color: #05a832;
+            box-shadow: 0 0 #05a832; /* No shadow on click */
+            transform: translateY(4px); /* Pressed effect */
+        }
+
+        .about-container {
+            padding: 20px;
+            text-align: center;
+        }
+
+        .about-container h1 {
+            font-size: 2.5em;
+            color: #333;
+        }
+
+        .about-container p {
+            font-size: 1.2em;
+            margin: 20px 0;
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="{{ url_for('static', filename='images.png') }}" alt="Cyber Security Logo">
+            <h1>Cyber Security</h1>
+        </div>
+        <nav>
+            <a href="{{ url_for('views.homepage') }}">Home</a>
+            <a href="{{ url_for('views.about') }}">About Us</a>
+            <a href="{{ url_for('views.services') }}">Services</a>
+            <a href="{{ url_for('admin_contacts') }}">Messages</a>  
+            <a href="{{ url_for('auth.logout') }}">Logout</a>
+        </nav>
+    </header>
+    <div class="about-container">
+        <h1>About Us</h1>
+        <p>
+            Welcome to Cyber Security! We are dedicated to providing top-notch cybersecurity solutions to protect your digital assets. 
+            Our team of experts specializes in safeguarding businesses and individuals from cyber threats, ensuring a secure online environment.
+        </p>
+        <p>
+            With years of experience in the industry, we offer a wide range of services, including vulnerability assessments, penetration testing, 
+            and real-time threat monitoring. Our mission is to empower our clients with the tools and knowledge needed to stay ahead of cybercriminals.
+        </p>
+        <p>
+            Thank you for trusting us with your cybersecurity needs. Together, we can build a safer digital world.
+        </p>
+    </div>
+</body>
+</html>

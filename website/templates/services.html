@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+            color: #333;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            background-color: #333;
+            color: white;
+        }
+
+        header .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        header .logo img {
+            height: 50px;
+        }
+
+        nav {
+            display: flex;
+            gap: 15px; /* Space between buttons */
+            justify-content: center; /* Center the buttons */
+            align-items: center;
+            background-color: #333;
+            padding: 10px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: white;
+            padding: 10px 15px;
+            border-radius: 5px;
+            background-color: #09e74c;
+            box-shadow: 0 4px #07c43f; /* 3D shadow effect */
+            transition: all 0.2s ease-in-out;
+        }
+
+        nav a:hover {
+            background-color: #07c43f;
+            box-shadow: 0 2px #05a832; /* Reduced shadow on hover */
+            transform: translateY(2px); /* Slight downward movement */
+        }
+
+        nav a:active {
+            background-color: #05a832;
+            box-shadow: 0 0 #05a832; /* No shadow on click */
+            transform: translateY(4px); /* Pressed effect */
+        }
+
+        .services-container {
+            padding: 20px;
+            text-align: center;
+        }
+
+        .services-container h1 {
+            font-size: 2.5em;
+            color: #333;
+        }
+
+        .service {
+            margin: 20px 0;
+            padding: 15px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .service h2 {
+            font-size: 1.5em;
+            color: #09e74c;
+        }
+
+        .service p {
+            font-size: 1em;
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="{{ url_for('static', filename='images.png') }}" alt="Cyber Security Logo">
+            <h1>Cyber Security</h1>
+        </div>
+        <nav>
+            <a href="{{ url_for('views.homepage') }}">Home</a>
+            <a href="{{ url_for('views.about') }}">About Us</a>
+            <a href="{{ url_for('views.services') }}">Services</a>
+            <a href="{{ url_for('admin_contacts') }}">Messages</a>
+            <a href="{{ url_for('auth.logout') }}">Logout</a>
+        </nav>
+    </header>
+    <div class="services-container">
+        <h1>Our Cybersecurity Services</h1>
+        <div class="service">
+            <h2>Vulnerability Assessment</h2>
+            <p>We identify and assess vulnerabilities in your systems to ensure they are secure from potential threats.</p>
+        </div>
+        <div class="service">
+            <h2>Penetration Testing</h2>
+            <p>Our experts simulate real-world attacks to test the resilience of your systems and identify weaknesses.</p>
+        </div>
+        <div class="service">
+            <h2>Threat Monitoring</h2>
+            <p>We provide 24/7 monitoring to detect and respond to cyber threats in real time.</p>
+        </div>
+        <div class="service">
+            <h2>Data Encryption</h2>
+            <p>We implement advanced encryption techniques to protect your sensitive data from unauthorized access.</p>
+        </div>
+        <div class="service">
+            <h2>Security Awareness Training</h2>
+            <p>We train your employees to recognize and respond to cybersecurity threats effectively.</p>
+        </div>
+    </div>
+</body>
+</html>

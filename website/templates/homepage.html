@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Cyber Security{% endblock %}</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+            color: #333;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            background-color: #333;
+            color: white;
+        }
+
+        header .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        header .logo img {
+            height: 50px;
+        }
+
+        nav {
+            display: flex;
+            gap: 15px; /* Space between buttons */
+            justify-content: center; /* Center the buttons */
+            align-items: center;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: white;
+            padding: 10px 15px;
+            border-radius: 5px;
+            background-color: #09e74c;
+            box-shadow: 0 4px #07c43f; /* 3D shadow effect */
+            transition: all 0.2s ease-in-out;
+        }
+
+        nav a:hover {
+            background-color: #07c43f;
+            box-shadow: 0 2px #05a832; /* Reduced shadow on hover */
+            transform: translateY(2px); /* Slight downward movement */
+        }
+
+        nav a:active {
+            background-color: #05a832;
+            box-shadow: 0 0 #05a832; /* No shadow on click */
+            transform: translateY(4px); /* Pressed effect */
+        }
+
+        .btn {
+            background-color: #09e74c;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            cursor: pointer;
+            border-radius: 5px;
+            box-shadow: 0 4px #07c43f; /* 3D shadow effect */
+            transition: all 0.2s ease-in-out;
+        }
+
+        .btn:hover {
+            background-color: #07c43f;
+            box-shadow: 0 2px #05a832; /* Reduced shadow on hover */
+            transform: translateY(2px); /* Slight downward movement */
+        }
+
+        .btn:active {
+            background-color: #05a832;
+            box-shadow: 0 0 #05a832; /* No shadow on click */
+            transform: translateY(4px); /* Pressed effect */
+        }
+
+        .hero .btn {
+            margin: 10px; /* Add spacing between buttons in the hero section */
+        }
+
+        .hero {
+            background-image: url("{{ url_for('static', filename='Cyber_trends_2025_-_Main1.jpg') }}");
+            background-size: cover;
+            background-position: center;
+            padding: 50px 20px;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 2.5em;
+            color: #030238;
+        }
+
+        .hero p {
+            font-size: 1.2em;
+            margin: 20px 0;
+            color: #030238;
+        }
+
+        .hero button {
+            display: block;
+            margin: 10px auto;
+            padding: 10px 20px;
+            background-color: #09e74c;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .hero button:hover {
+            background-color: #07c43f;
+        }
+
+        .search-bar {
+            padding: 10px 20px;
+            background-color: #333;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            <img src="{{ url_for('static', filename='images.png') }}" alt="Cyber Security Logo">
+            <h1>Cyber Security</h1>
+        </div>
+        <nav>
+            <a href="{{ url_for('views.homepage') }}">Home</a>
+            <a href="{{ url_for('views.about') }}">About Us</a>
+            <a href="{{ url_for('views.services') }}">Services</a>
+            <a href="{{ url_for('admin_contacts') }}">Messages</a>
+            <a href="{{ url_for('auth.logout') }}">Logout</a>
+        </nav>
+    </header>
+    <div class="hero">
+        <div class="content">
+            <h1>We Provide Best CyberSecurity Solutions</h1>
+            <p>Welcome to Cyber Security
+                At Cyber Security, we are dedicated to safeguarding your digital assets against evolving cyber threats. Our team of seasoned cybersecurity professionals offers cutting-edge solutions tailored to protect individuals and organizations alike. From real-time threat detection to comprehensive risk assessments, we empower you with the tools and knowledge to navigate the digital landscape securely. Trust Cyber Security to be your partner in fortifying your cyber defenses.
+            </p>
+        </div>
+        <a href="{{ url_for('views.contact') }}" class="btn">Contact</a>
+    </div>
+
+    <script>
+        function getStarted() {
+            alert("Getting Started...");
+        }
+
+        function contactUs() {
+            alert("Contacting Us...");
+        }
+
+        function getQuote() {
+            alert("Redirecting to Profile or Login...");
+        }
+    </script>
+</body>
+
+</html>
